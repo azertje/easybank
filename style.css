@@ -1,0 +1,196 @@
+  :root {
+    --dark-blue: hsl(233, 26%, 24%);
+    --lime-green: hsl(136, 65%, 51%);
+    --bright-cyan: hsl(192, 70%, 51%);
+    --grayish-blue: hsl(233, 8%, 62%);
+    --light-grayish-blue: hsl(220, 16%, 96%);
+    --very-light-gray: hsl(0, 0%, 98%);
+    --white: hsl(0, 0%, 100%);
+  }
+  
+  /* Box sizing rules */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  /* Remove default margin */
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  figure,
+  blockquote,
+  dl,
+  dd {
+    margin-block-end: 0;
+  }
+  
+  /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+  ul[role='list'],
+  ol[role='list'] {
+    list-style: none;
+  }
+  
+  /* Set core root defaults */
+  html:focus-within {
+    scroll-behavior: smooth;
+  }
+  
+  /* Set core body defaults */
+  body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-size: 18px;
+    font-family: 'Public Sans', system-ui, sans-serif;
+  }
+  
+  /* A elements that don't have a class get default styles */
+  a:not([class]) {
+    text-decoration-skip-ink: auto;
+  }
+  
+  /* Make images easier to work with */
+  img,
+  picture {
+    max-width: 100%;
+    display: block;
+  }
+  
+  /* Inherit fonts for inputs and buttons */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+  
+  /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+  @media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+     scroll-behavior: auto;
+    }
+    
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  
+  /* Attribution */
+  .attribution { font-size: 11px; text-align: center; }
+  .attribution a { color: var(--dark-blue); }
+  .attribution a:hover { color: #fff; }
+  
+  /* Navigation */
+  .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      border: 0;
+  }
+  
+  header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #3CBEFF;
+  }
+  
+  .mobile-nav-toggle {
+      display: none;
+  }
+  
+  .logo-container img {
+      height: 30px;
+      margin: 2rem 1rem;
+  }
+  
+  .primary-navigation {
+      display: flex;
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      padding-inline: 3rem;
+  }
+  
+  .primary-navigation a {
+      color: var(--dark-blue);
+      text-decoration: none;
+  }
+  .primary-navigation a > [aria-hidden="true"] {
+      font-weight: 400;
+      margin-inline-end: .25em;
+  }
+  
+  @media (max-width: 767px) {
+      .primary-navigation {
+          gap: 1rem;
+  
+          position: fixed;
+          z-index: 1000;
+          inset: 15% 5% auto 5%;
+          border-radius: .5rem;
+  
+          flex-direction: column;
+          padding: min(5vh, 10rem) 2em;
+          text-align: center;
+  
+          background: var(--white);
+          backdrop-filter: blur(1rem);
+  
+          transform: translateX(120%);
+          transition: transform 350ms ease-out;
+      }
+  
+      .primary-navigation[data-visible="true"] {
+          transform: translateX(0%);
+      }
+  
+      .mobile-nav-toggle {
+          display: block;
+          position: absolute;
+          background-color: transparent;
+          background: url('images/icon-hamburger.svg');
+          background-repeat: no-repeat;
+          background-position: bottom;
+          width: 1.75rem;
+          border: 0;
+          aspect-ratio: 1;
+          top: 2rem;
+          right: 2rem;
+          z-index: 9999;
+      }
+  
+      .mobile-nav-toggle[aria-expanded="true"] {
+          background-image: url('images/icon-close.svg');
+      }
+
+      .hidden  {
+        visibility: hidden;
+      }
+      .modal-backdrop {
+        position:fixed;
+        top:0;
+        left:0;
+        width:100vw;
+        height:100vh;
+        background-color:rgba(0,0,0,0.3);
+      }
+  }
