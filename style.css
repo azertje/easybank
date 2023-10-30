@@ -115,6 +115,9 @@ select {
 }
 
 header {
+    background-color: var(--white);
+}
+.header-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -196,7 +199,7 @@ header {
 
 /* Features */
 .features {
-    background-color: var(#F4F5F7);
+    background-color:#F4F5F7;
     padding-bottom: 2rem;
 }
 .features-text {
@@ -397,5 +400,119 @@ footer p {
         width: 100vw;
         height: 100vh;
         background-color: rgba(0, 0, 0, 0.3);
+    }
+}
+
+@media (min-width: 768px) {
+    .primary-navigation a {
+        color: var(--grayish-blue);
+        transition: 200ms;
+    }
+    .primary-navigation a:hover {
+        color: var(--dark-blue);
+    }
+    .banner {
+        background-position: 50% -160px;
+        background-size: 100% 900px;
+        height: 55vh;
+    }
+    .hero img {
+        top: -275px;
+        max-width: 768px;
+    }
+    .articles-container  {
+        justify-content: center;
+    }
+    .articles-card {
+        width: 25rem;
+    }
+}
+
+@media (min-width: 1000px) {
+    .features-container {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 1rem;
+        text-align: left;
+    }
+    .features-card img {
+        margin: 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .header-container {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .hero {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+    .banner {
+        background-image: url('images/bg-intro-desktop.svg');
+        background-position: -50px -180px;
+        background-size: 150%;
+        width: 50%;
+        height: 70vh;
+    }
+    .banner img {
+        max-width: 700px;
+        top: -115px;
+        right: -85px;
+        z-index: 10;
+    }
+    .banner-text {
+        width: 37%;
+        margin: 0 auto;
+        align-items: flex-start;
+        padding-right: 0;
+    }
+    .banner-text h1 {
+        font-size: 4rem;
+        line-height: 1;
+    }
+    .banner-text p {
+        font-size: 1.25rem;
+    }
+    .banner-text h1, .banner-text p, .banner-text a {
+        text-align: left;
+    }
+
+
+    .features-container, .articles-container, .articles h2 {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .features-container {
+        gap: 2rem;
+    }
+    .features-text {
+        width: 1200px;
+        padding-bottom: 2rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .features-text p, .features-text h2 {
+        text-align: left;
+        width: 50%;
+    }
+    .articles-container {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 1rem;
+        padding: 0;
+    }
+    .articles-card {
+        width: auto;
+    }
+    .articles h2 {
+        margin-bottom: 2rem;
+        text-align: left;
     }
 }
