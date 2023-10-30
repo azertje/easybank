@@ -196,6 +196,22 @@ header {
     margin-top: 2rem;
     text-decoration: none;
 }
+.banner-text a:hover {
+    opacity: 0.6;
+}
+.nav-button {
+    border-radius: 2rem;
+    background: linear-gradient(90deg, rgba(49,211,92,1) 0%, rgba(43,183,218,1) 100%);
+    padding: 0.5rem 2rem;
+    text-decoration: none;
+    color: var(--white);
+    display: block;
+    transition: 200ms;
+}
+.nav-button:hover {
+    opacity: 0.6;
+}
+
 
 /* Features */
 .features {
@@ -280,11 +296,18 @@ h2 {
 .article-text {
     padding: 1.5rem 1.5rem;
 }
+.article-text a {
+    text-decoration: none;
+}
+.article-text a:hover h3 {
+    color: var(--lime-green);
+}
 .article-text h3 {
     font-weight: 400;
     font-size: 1rem;
     color: var(--dark-blue);
     margin: 0;
+    transition: 200ms;
 }
 .article-text p {
     font-size: 0.75rem;
@@ -310,6 +333,12 @@ footer {
     max-width: 10rem;
     margin: 2rem auto;
 }
+.footer-socials svg path {
+    transition: 300ms;
+  }
+  .footer-socials svg:hover path{
+    fill: var(--lime-green);
+  }
 .footer-links {
     display: flex;
     flex-direction: column;
@@ -325,7 +354,7 @@ footer {
     transition: 300ms;
 }
 .footer-links a:hover {
-    color: var(--white);
+    color: var(--lime-green);
 }
 .test {
     text-align: center;
@@ -339,6 +368,10 @@ footer {
     text-decoration: none;
     padding: 0.75rem 2rem;
     display: inline-block;
+    transition: 200ms;
+}
+.footer-invite:hover {
+    filter: brightness(120%);
 }
 footer p {
     color: var(--grayish-blue);
@@ -400,6 +433,9 @@ footer p {
         width: 100vw;
         height: 100vh;
         background-color: rgba(0, 0, 0, 0.3);
+    }
+    .nav-button {
+        display: none;
     }
 }
 
